@@ -1,11 +1,9 @@
 import numpy as np
-from scipy.stats import gmean,hmean
+from scipy.stats import gmean,hmean,mode
 dataArray = np.load('PreparingData/data.npy')
 medain = np.median(dataArray)
 mean = np.mean(dataArray)
+modeData = mode(dataArray, keepdims=True)
 geometryMean = gmean(dataArray)
 harmonicMean = hmean(dataArray)
-minData = np.min(dataArray)
-maxData = np.max(dataArray)
-rangeData = maxData - minData
-standardDeviation = np.std(dataArray)
+
